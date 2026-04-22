@@ -3,14 +3,14 @@ describe("login command test", () => {
     cy.visit("https://www.edu.goit.global/account/login");
   });
   it("admin login", () => {
-    cy.signIn("user888@gmail.com", "1234567890");
+    cy.signIn(Cypress.env("adminEmail"), Cypress.env("adminPassword"));
   });
 
   it("user login", () => {
-    cy.signIn("nadia.tsomko.98@gmail.com", "Nadia_Tsomko78");
+    cy.signIn(Cypress.env("userEmail"), Cypress.env("userPassword"));
   });
 
   it("manager login", () => {
-    cy.signIn("mrdusty@duniakeliling.com", "mrdusty@duniakeliling.com");
+    cy.signIn(Cypress.env("managerEmail"), Cypress.env("managerPassword"));
   });
 });
