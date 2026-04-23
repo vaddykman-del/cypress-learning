@@ -3,8 +3,8 @@ export class Login {
     cy.visit("https://www.edu.goit.global/account/login");
   }
   validateLoginTitle() {
-    cy.get(".css-10stgr7 > .css-c1vj7d").should("be.visible");
-    cy.get(".css-10stgr7 > .css-c1vj7d").should("have.text", "Login");
+    cy.contains("h2", "Login").should("be.visible");
+    cy.contains("h2", "Login").should("have.text", "Login");
   }
   validateInputs() {
     cy.get("#user_email").should("be.visible");
@@ -15,8 +15,8 @@ export class Login {
   }
 
   validatePasswordLink() {
-    cy.get(".css-1f1fv1i > .css-1qrvie4").should("be.visible");
-    cy.get(".css-1f1fv1i > .css-1qrvie4").should(
+    cy.get('a[href="/account/password/restore"]').should("be.visible");
+    cy.get('a[href="/account/password/restore"]').should(
       "have.text",
       "I can't remember the password",
     );
