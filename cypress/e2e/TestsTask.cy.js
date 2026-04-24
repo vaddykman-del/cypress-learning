@@ -8,7 +8,7 @@ describe("3 Tasks", () => {
     LoginPage.navigate();
     // enter incorrect creds
     cy.signIn(Cypress.env("incorrectEmail"), Cypress.env("incorrectPassword"));
+    // check alert message
+    LoginPage.validateAlertMessage();
   });
-  // check alert message
-  LoginPage.validateAlertMessag();
 });

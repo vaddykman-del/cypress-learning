@@ -23,7 +23,8 @@ export class Login {
   }
 
   validateAlertMessage() {
-    cy.get('[role="alert"]').should("be.visible");
-    cy.get("have.text", "Incorrect email address");
+    cy.contains("An incorrect username or password has been submitted").should(
+      "be.visible",
+    );
   }
 }
