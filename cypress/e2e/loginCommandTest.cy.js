@@ -3,7 +3,7 @@ describe("login command test", () => {
     cy.visit("https://www.edu.goit.global/account/login");
   });
   it("admin login", () => {
-    cy.signIn(Cypress.env("adminEmail"), Cypress.env("adminPassword"));
+    cy.signIn(Cypress.env("incorrectEmail"), Cypress.env("incorrectPassword"));
   });
 
   it("user login", () => {
