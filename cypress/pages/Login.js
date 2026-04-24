@@ -21,4 +21,9 @@ export class Login {
       "I can't remember the password",
     );
   }
+
+  validateAlertMessage() {
+    cy.get('[role="alert"]').should("be.visible");
+    cy.get("have.text", "Incorrect email address");
+  }
 }
