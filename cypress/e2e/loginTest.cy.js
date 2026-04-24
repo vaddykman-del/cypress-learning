@@ -1,24 +1,18 @@
-describe("Наш перший блок тестів", () => {
-  // cypress code
-  beforeEach(() => {
-    cy.visit("https://www.edu.goit.global/account/login");
-  });
+import { Login } from "../pages/Login";
 
-  it("Тест відвідування сайту LMS", () => {
-    // Знаходимо інпут з поштою та вводимо email
-    cy.get('[name="email"]').type(Cypress.env("userEmail"));
-    cy.get('[name="password"]').type(Cypress.env("userPassword"));
-    cy.get(".next-1jphuq5").click();
-  });
-  it("Тестуємо кнопку", () => {
-    //
+const LoginPage = new Login();
 
-    // Знаходимо перевіряємо кнопку
-    cy.get('[type="submit"]').should("have.text", "Log in");
-    cy.get('[type="submit"]').should(
-      "have.css",
-      "background-color",
-      "rgb(255, 107, 10)",
-    );
+describe("Page object example", () => {
+  it("login page test", () => {
+    // visit page
+    LoginPage.navigate();
+    // check title
+    LoginPage.validateLoginTitle();
+    // check inputs
+    LoginPage.validateInputs();
+    // check button
+    LoginPage.validateButton();
+    // check link
+    LoginPage.validatePasswordLink();
   });
 });
