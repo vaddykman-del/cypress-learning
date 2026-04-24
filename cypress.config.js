@@ -9,5 +9,6 @@ module.exports = defineConfig({
     },
     video: true,
     trashAssetsBeforeRuns: true,
+    specPattern: "cypress/**/*.cy.js",
   },
 });
