@@ -31,4 +31,7 @@ export class Login {
     cy.contains("Email address is missing").should("be.visible");
     cy.contains("Enter the password to continue").should("be.visible");
   }
+  validateSuccessfullogin() {
+    cy.url().should("include", "/homepage");
+  }
 }

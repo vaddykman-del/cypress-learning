@@ -19,4 +19,18 @@ describe("3 Tasks", () => {
     // check alert message
     LoginPage.validateMissingCredsMessages();
   });
+  it("Complete login flow", () => {
+    // check title
+    LoginPage.validateLoginTitle();
+    // check inputs
+    LoginPage.validateInputs();
+    // check button
+    LoginPage.validateButton();
+    // check link
+    LoginPage.validatePasswordLink();
+    // login
+    cy.signIn(Cypress.env("userEmail"), Cypress.env("userPassword"));
+    // check login
+    LoginPage.validateSuccessfullogin();
+  });
 });
