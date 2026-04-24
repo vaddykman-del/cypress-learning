@@ -22,9 +22,13 @@ export class Login {
     );
   }
 
-  validateAlertMessage() {
+  validateIncorrectCredsMessage() {
     cy.contains("An incorrect username or password has been submitted").should(
       "be.visible",
     );
+  }
+  validateMissingCredsMessages() {
+    cy.contains("Email address is missing").should("be.visible");
+    cy.contains("Enter the password to continue").should("be.visible");
   }
 }
