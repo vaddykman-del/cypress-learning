@@ -1,6 +1,11 @@
 describe("httpbin tests", () => {
+  const request = {
+    url: "https://httpbin.org",
+    failOnStatusCode: false,
+  };
+
   it("response code should be 200", () => {
-    cy.request("https://httpbin.org").then((response) => {
+    cy.request(request).then((response) => {
       const status = response.status;
 
       assert.equal(200, status);
