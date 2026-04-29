@@ -11,6 +11,8 @@ describe("testing body and status", () => {
   };
   it("complex post test", () => {
     cy.request(request).then((response) => {
+      debugger;
+
       assert.equal(200, response.status);
       assert.notStrictEqual(bodyData, response.body.data);
     });
