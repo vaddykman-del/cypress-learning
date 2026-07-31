@@ -3,7 +3,7 @@ config:
   phases:
     - duration: 1
       arrivalRate: 1
-      name: Artillery First Capturing Details Test
+      name: Artillery First Capturing User Data Test
 scenarios:
   - name: Getting a resource
     flow:
@@ -12,8 +12,9 @@ scenarios:
       - post:
           url: "{{ target }}post"
           json:
-            username: "Test User"
-            password: "Temp Password"
+            name: "FirstName"
+            second name: "SecondName"
+            location: "location"
           capture:
             - json: "$.json"
               as: "request_body"
