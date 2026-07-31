@@ -1,0 +1,16 @@
+config:
+  target: "https://httpbin.io/"
+  phases:
+    - duration: 5
+      arrivalRate: 5
+      name: Artillery First Test
+scenarios:
+  - name: Getting a resource
+    flow:
+      - get:
+          url: "{{ target }}get"
+      - post:
+          url: "{{ target }}post"
+          json:
+            username: "Test User"
+            password: "Temp Password"
